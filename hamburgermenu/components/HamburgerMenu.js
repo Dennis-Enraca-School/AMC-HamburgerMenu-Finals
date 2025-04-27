@@ -54,14 +54,14 @@ const HamburgerMenu = () => {
           }
         >
           <ScrollView>
-            <View>
-              <Text>Menu</Text>
+            <View style={styles.menuHeader}>
+              <Text style={styles.menuTitle}>Menu</Text>
             </View>
 
-            <View>
+            <View style={styles.menuItems}>
                {menuItems.map((item) => (
-                <TouchableOpacity>
-                  key = {item.id}
+                <TouchableOpacity style={styles.menuItem}>
+                  <Text style={styles.menuItemText}>{item.title}</Text>
                 </TouchableOpacity>
                ))}
             </View>
@@ -116,5 +116,29 @@ const styles = StyleSheet.create({
     shadowOffset: {width:2, height:2},
     shadowRadius: 5,
     elevation: 5,
-  }
+  },
+  menuHeader: {
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
+  },
+  menuTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#333',
+    textAlign: 'center'
+  },
+  menuItems: {
+    paddingVertical: 10,
+  },
+  menuItem: {
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
+  },
+  menuItemText: {
+    fontSize: 18,
+    color: '#333',
+  },
 });
